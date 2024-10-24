@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>視覺小說推薦</title>
+   <style>
+       body {
+           background-color: #f4f4f9;
+           padding: 20px;
+       }
+       h1 {
+           text-align: center;
+           color: #333;
+           margin-bottom: 40px;
+       }
+       h2 {
+           color: #4A90E2;
+       }
+       p {
+           font-size: 16px;
+           line-height: 1.5;
+           color: #666;
+       }
+       .container {
+           display: flex;
+           align-items: center;
+           background-color: #fff;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           margin-bottom: 20px;
+           padding: 20px;
+           border-radius: 10px;
+       }
+       .container img {
+           width: 200px;
+           height: auto;
+           border-radius: 10px;
+           margin-right: 20px;
+       }
+       a {
+           display: inline-block;
+           margin-top: 10px;
+           padding: 10px 20px;
+           background-color: #4A90E2;
+           color: #fff;
+           text-decoration: none;
+           border-radius: 5px;
+           text-align: center;
+       }
+       a:hover {
+           background-color: #357ABD;
+       }
+        .menu-icon {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 35px;
+            height: 5px;
+            background-color: #333;
+            margin: 6px 0;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            background-color: #4A90E2;
+            position: absolute;
+            top: 65px;
+            left: 27px;
+            z-index: 1;
+            width: 150px;
+        }
+   </style>
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="menu" id="menu">
+        <a href="https://nttu11325101.github.io/test/Animation_Recommendations.html">動畫推薦</a>
+        <a href="https://nttu11325101.github.io/test/Manhwa_Recommendations.html">韓漫推薦</a>
+        <a href="https://nttu11325101.github.io/test/Light_Novel_Recommendations.html">輕小說推薦</a>
+    </div>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+    </script>
+   <h1>視覺小說推薦一覽</h1>
+   <div class="container">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2593370/header_tchinese.jpg?t=1729664615">
+      <div>
+         <h2>餓殍：明末千里行</h2>
+         <p>簡介:明末崇禎五年（1632年），盜匪良和同夥接了人牙子的委託。<br>良需將四名小女孩從華州城運至洛陽城。<br>路途千里，一行人將走過華州、閿鄉、陝州、最終抵達洛陽。<br>起初，良以為被他運送的女孩會被賣到富人家裡作養女。<br>行至途中，名為“穗”的女孩告知良此次運送的“真相”。<br>原來，買走女孩的是一頭修行千年的豚妖。<br>豚妖以食女童為樂，每年壽辰便從陝地搜羅女童食用，穗的姐姐正是因此而死。<br>穗希望良能放棄運送，最好能與她一同刺殺豚妖，幫她姐姐和數年來喪生的女孩們復仇！<br>良不完全信穗的話，畢竟穗的身上似乎埋藏着很多謎團。<br>良將在旅途中搜集情報，查明真相，並作出他的選擇。</p>
+         <a href="https://store.steampowered.com/app/2593370/_/?l=tchinese" target="_blank">連結</a>
+      </div>
+   </div>
+</body>
+</html>
