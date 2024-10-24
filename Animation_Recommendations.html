@@ -44,13 +44,55 @@
            color: #fff;
            text-decoration: none;
            border-radius: 5px;
+           text-align: center;
        }
        a:hover {
            background-color: #357ABD;
        }
+        .menu-icon {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 35px;
+            height: 5px;
+            background-color: #333;
+            margin: 6px 0;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            background-color: #4A90E2;
+            position: absolute;
+            top: 65px;
+            left: 27px;
+            z-index: 1;
+            width: 150px;
+        }
    </style>
 </head>
 <body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="menu" id="menu">
+        <a href="https://nttu11325101.github.io/test/Manhwa_Recommendations.html">韓漫推薦</a>
+        <a href="https://nttu11325101.github.io/test/Light_Novel_Recommendations.html">輕小說推薦</a>
+        <a href="https://nttu11325101.github.io/test/Visual_Novel_Recommendations.html">視覺小說推薦</a>
+    </div>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+    </script>
    <h1>動畫推薦一覽</h1>
    <h3>《日本動畫》</h3>
    <div class="container">
@@ -170,6 +212,5 @@
          <a href="https://www.youtube.com/playlist?list=PLBakWosU0sfhpbpTxp1RPx8E2n5WoTmxy" target="_blank">連結</a>
       </div>
    </div>
-   <a href="https://nttu11325101.github.io/test/Manhwa_Recommendations.html">韓漫推薦</a>
 </body>
 </html>
