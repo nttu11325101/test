@@ -44,13 +44,55 @@
            color: #fff;
            text-decoration: none;
            border-radius: 5px;
+           text-align: center;
        }
        a:hover {
            background-color: #357ABD;
        }
+        .menu-icon {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 35px;
+            height: 5px;
+            background-color: #333;
+            margin: 6px 0;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            background-color: #4A90E2;
+            position: absolute;
+            top: 65px;
+            left: 27px;
+            z-index: 1;
+            width: 150px;
+        }
    </style>
 </head>
 <body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="menu" id="menu">
+        <a href="Animation_Recommendations.html">動畫推薦</a>
+        <a href="https://nttu11325101.github.io/test/Light_Novel_Recommendations.html">輕小說推薦</a>
+        <a href="https://nttu11325101.github.io/test/Visual_Novel_Recommendations.html.html">視覺小說推薦</a>
+    </div>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+    </script>
    <h1>韓漫推薦一覽</h1>
    <div class="container">
       <img src="https://nttu11325101.github.io/test/1.webp">
@@ -182,6 +224,5 @@
          <p>不專業簡介:男主高中畢業後握刀20年，成了全國第一刀手，是魚料理店的廚師長。某天突然被遊戲吞掉，附身在了遊戲中不知道在哪兒的背景人物姜劍魔身上，男主在附身之前，姜劍魔已經覺醒了加護並考上了學院。姜劍魔的加護是無痛、劍神的加護。</p>
       </div>
    </div>
-   <a href="https://nttu11325101.github.io/test/Animation_Recommendations.html">動畫推薦</a>
 </body>
 </html>
