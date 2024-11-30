@@ -213,5 +213,12 @@
          <a href="https://www.youtube.com/playlist?list=PLBakWosU0sfhpbpTxp1RPx8E2n5WoTmxy" target="_blank">連結</a>
       </div>
    </div>
+   <footer style="text-align: center; margin-top: 20px; background-color: #f1f1f1; padding: 10px; font-size: 14px; color: #555;">
+    <p id="lastModified"></p>
+   </footer>
+   <script>
+    const lastModified = document.lastModified;
+    document.getElementById("lastModified").innerText = `上次更新日期：${lastModified}`;
+   </script>
 </body>
 </html>
