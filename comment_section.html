@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=0.5">
+   <title>留言區</title>
+   <link rel="icon" href="favicon.jpg" type="image/jpg">
+   <style>
+       body {
+           background-color: #f4f4f9;
+           padding: 20px;
+       }
+       h1 {
+           text-align: center;
+           color: #333;
+           margin-bottom: 40px;
+       }
+       h2 {
+           color: #4A90E2;
+       }
+       p {
+           font-size: 16px;
+           line-height: 1.5;
+           color: #666;
+       }
+       .container {
+           display: flex;
+           align-items: center;
+           background-color: #fff;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           margin-bottom: 20px;
+           padding: 20px;
+           border-radius: 10px;
+       }
+       .container img {
+           width: 200px;
+           height: auto;
+           border-radius: 10px;
+           margin-right: 20px;
+       }
+       a {
+           display: inline-block;
+           margin-top: 10px;
+           padding: 10px 20px;
+           background-color: #4A90E2;
+           color: #fff;
+           text-decoration: none;
+           border-radius: 5px;
+           text-align: center;
+       }
+       a:hover {
+           background-color: #357ABD;
+       }
+        .menu-icon {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 35px;
+            height: 5px;
+            background-color: #333;
+            margin: 6px 0;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            background-color: #4A90E2;
+            position: absolute;
+            top: 65px;
+            left: 27px;
+            z-index: 1;
+            width: 150px;
+        }
+   </style>
+</head>
+<body>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="menu" id="menu">
+        <a href="https://nttu11325101.github.io/test/Animation_Recommendations.html">動畫推薦</a>
+        <a href="https://nttu11325101.github.io/test/Manhwa_Recommendations.html">韓漫推薦</a>
+         <a href="https://nttu11325101.github.io/test/Light_Novel_Recommendations.html">輕小說推薦</a>
+        <a href="https://nttu11325101.github.io/test/Visual_Novel_Recommendations.html">視覺小說推薦</a>
+    </div>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            if (menu.style.display === "flex") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "flex";
+            }
+        }
+        </script>
+        <script defer src="https://cdn.commento.io/js/commento.js"></script>
+<div id="commento"></div>
+</body>
