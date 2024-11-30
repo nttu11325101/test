@@ -86,21 +86,68 @@
          <a href="https://nttu11325101.github.io/test/Light_Novel_Recommendations.html">輕小說推薦</a>
         <a href="https://nttu11325101.github.io/test/Visual_Novel_Recommendations.html">視覺小說推薦</a>
     </div>
+    <p>如果你想留言，請填寫下方的表單：</p>
+    <form id="commentForm">
+        <textarea id="commentInput" placeholder="輸入你的留言..." rows="4" cols="50"></textarea><br><br>
+        <button type="button" onclick="submitComment()">提交留言</button>
+    </form>
+
+    <h2>留言列表</h2>
+    <div id="comments"></div>
+
     <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            if (menu.style.display === "flex") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "flex";
+        // 當用戶提交留言時，調用 GitHub API 創建 Issue
+        function submitComment() {
+            const commentText = document.getElementById("commentInput").value;
+            if (commentText) {
+                const issueData = {
+                    title: "留言：" + commentText.substring(0, 30),  // 取留言的前30個字作為標題
+                    body: commentText,  // 實際留言內容
+                };
+                
+                // 使用 GitHub API 創建 Issue
+                fetch('https://api.github.com/repos/YOUR_USERNAME/YOUR_REPOSITORY/issues', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'token YOUR_GITHUB_TOKEN',  // 你需要生成一個 GitHub token
+                    },
+                    body: JSON.stringify(issueData),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log("留言已提交：", data);
+                    alert("留言已成功提交！");
+                    document.getElementById("commentInput").value = "";  // 清空留言框
+                    loadComments();  // 重新加載留言
+                })
+                .catch(error => {
+                    console.error("錯誤：", error);
+                    alert("提交留言時發生錯誤！");
+                });
             }
         }
-        </script>
-   <script>
-  window.commento_config = {
-    locale: 'zh'
-  };
-</script>
-   <script defer src="https://cdn.commento.io/js/commento.js"></script>
-<div id="commento"></div>
+
+        // 加載現有的留言（GitHub Issues）
+        function loadComments() {
+            fetch('https://api.github.com/repos/YOUR_USERNAME/YOUR_REPOSITORY/issues')
+            .then(response => response.json())
+            .then(data => {
+                const commentsDiv = document.getElementById("comments");
+                commentsDiv.innerHTML = "";  // 清空當前的留言
+                data.forEach(issue => {
+                    const commentElement = document.createElement("p");
+                    commentElement.textContent = issue.body;  // 顯示留言內容
+                    commentsDiv.appendChild(commentElement);
+                });
+            })
+            .catch(error => {
+                console.error("錯誤：", error);
+            });
+        }
+
+        // 頁面加載時顯示留言
+        loadComments();
+    </script>
 </body>
+</html>
