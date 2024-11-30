@@ -103,5 +103,17 @@
          <a href="https://store.steampowered.com/app/2593370/_/?l=tchinese" target="_blank">連結</a>
       </div>
    </div>
+   </footer>
+   <script>
+      const lastModified = new Date(document.lastModified).toLocaleString('zh-TW', {
+         year: 'numeric',
+         month: 'long',
+         day: 'numeric',
+         hour: '2-digit',
+         minute: '2-digit',
+         second: '2-digit',
+      });
+      document.getElementById("lastModified").innerText = `這裡最後打掃過的時間是：${lastModified}`;
+   </script>
 </body>
 </html>
