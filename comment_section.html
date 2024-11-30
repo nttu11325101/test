@@ -106,11 +106,11 @@
                 };
                 
                 // 使用 GitHub API 創建 Issue
-                fetch('https://api.github.com/repos/YOUR_USERNAME/YOUR_REPOSITORY/issues', {
+                fetch('https://api.github.com/repos/nttu11325101/test/issues', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'token YOUR_GITHUB_TOKEN',  // 你需要生成一個 GitHub token
+                        'Authorization': 'token comment_section',  // 你需要生成一個 GitHub token
                     },
                     body: JSON.stringify(issueData),
                 })
