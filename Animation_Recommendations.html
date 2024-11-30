@@ -213,12 +213,27 @@
          <a href="https://www.youtube.com/playlist?list=PLBakWosU0sfhpbpTxp1RPx8E2n5WoTmxy" target="_blank">連結</a>
       </div>
    </div>
-   <footer style="text-align: center; margin-top: 20px; background-color: #f1f1f1; padding: 10px; font-size: 14px; color: #555;">
-    <p id="lastModified"></p>
+   <footer style="text-align: center; margin-top: 20px; font-family: Arial, sans-serif;">
+    <p id="lastModified" style="
+        font-size: 1.2em;
+        color: #555;
+        background-color: #f9f9f9;
+        padding: 10px 15px;
+        border-radius: 8px;
+        display: inline-block;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    "></p>
    </footer>
    <script>
-    const lastModified = document.lastModified;
-    document.getElementById("lastModified").innerText = `這裡最後打掃過的時間是：${lastModified}`;
+      const lastModified = new Date(document.lastModified).toLocaleString('zh-TW', {
+         year: 'numeric',
+         month: 'long',
+         day: 'numeric',
+         hour: '2-digit',
+         minute: '2-digit',
+         second: '2-digit',
+      });
+      document.getElementById("lastModified").innerText = `這裡最後打掃過的時間是：${lastModified}`;
    </script>
 </body>
 </html>
