@@ -130,7 +130,7 @@
 
         // 加載現有的留言（GitHub Issues）
         function loadComments() {
-            fetch('https://api.github.com/repos/YOUR_USERNAME/YOUR_REPOSITORY/issues')
+            fetch('https://api.github.com/repos/nttu11325101/test/issues')
             .then(response => response.json())
             .then(data => {
                 const commentsDiv = document.getElementById("comments");
